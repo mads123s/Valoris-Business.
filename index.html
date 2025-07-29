@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valoris Business</title>
     <link rel="stylesheet" href="style.css">
-    <meta name="description" content="Valoris Business : votre centre de contact expert en télévente et prise de rendez-vous, spécialisé en LED et assurance.">
     <style>
+        html, body {
+            height: 100%; /* S'assure que le body prend 100% de la hauteur de l'écran */
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
         /* Image de fond */
         body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
             background-image: url('https://images.unsplash.com/photo-1581091870627-9b5315067888'); /* Image générique d'un bureau moderne */
-            background-size: cover;
+            background-size: cover; /* L'image va se redimensionner pour couvrir toute la zone */
             background-position: center;
             background-attachment: fixed;
             color: #fff;
@@ -20,6 +23,7 @@
             z-index: 0;
             overflow-x: hidden;
             filter: brightness(60%); /* L'image devient un peu plus sombre pour améliorer la lisibilité */
+            min-height: 100vh; /* Garantit que le contenu prend au moins toute la hauteur de l'écran */
         }
 
         /* Superposition sombre */
@@ -29,11 +33,6 @@
             top: 0; left: 0; right: 0; bottom: 0;
             background-color: rgba(0, 0, 0, 0.5); /* Superposition noire */
             z-index: -1;
-        }
-
-        /* Effet de fade-in sur le body */
-        * {
-            transition: all 0.3s ease-in-out;
         }
 
         header {
@@ -114,26 +113,6 @@
             margin-top: 30px;
         }
 
-        /* Bouton principal */
-        a.cta-button {
-            display: inline-block;
-            background: #1e3c72;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 15px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        a.cta-button:hover {
-            background-color: #163c62;
-            transform: translateY(-5px);
-        }
-
-        /* Bouton WhatsApp fixe */
         .whatsapp-btn {
             position: fixed;
             bottom: 20px;
@@ -141,3 +120,73 @@
             background-color: #25D366;
             color: white;
             padding: 15px 25px;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            font-size: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 999;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Rendre la page responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav {
+                margin-top: 10px;
+            }
+            .whatsapp-btn {
+                padding: 12px 22px;
+                font-size: 24px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/logo_valoris_generated.png" alt="Logo Valoris Business" class="logo">
+        <h1>Valoris Business</h1>
+        <nav>
+            <a href="#accueil">Accueil</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section id="accueil">
+        <h2>Bienvenue chez Valoris Business</h2>
+        <p>De la LED à l’assurance, un service brillant et rassurant. Votre centre de contact pour un télémarketing gagnant !</p>
+    </section>
+    <section id="services">
+        <h2>Nos Services</h2>
+        <p>Nous offrons un service de qualité en prise de rendez-vous et télévente. Notre centre de contact garantit professionnalisme, efficacité et résultats. Avec Valoris Business, vos campagnes bénéficient d'un accompagnement personnalisé pour maximiser votre succès commercial.</p>
+    </section>
+    <section id="gallery">
+        <h2>Nos Produits</h2>
+        <img src="images/led1.jpg" alt="Éclairage LED">
+        <img src="images/assurance1.jpg" alt="Assurance contrat">
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email : <a href="mailto:valoris.vb@gmail.com">valoris.vb@gmail.com</a></p>
+        <p><a href="https://wa.me/212635419426">Contactez-nous sur WhatsApp</a></p>
+    </section>
+    <footer>
+        <p>&copy; 2025 Valoris Business - Tous droits réservés.</p>
+    </footer>
+
+    <!-- Bouton WhatsApp -->
+    <a href="https://wa.me/212635419426" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i> <!-- Ajoutez une icône WhatsApp si nécessaire -->
+    </a>
+
+</body>
+</html>
