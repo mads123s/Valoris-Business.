@@ -5,59 +5,179 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valoris Business</title>
     <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Valoris Business : votre centre de contact expert en télévente et prise de rendez-vous, spécialisé en LED et assurance.">
     <style>
+        /* Image de fond */
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f7f7f7;
-            color: #333;
+            font-family: 'Arial', sans-serif;
+            background-image: url('images/background.jpg'); /* Remplacez avec votre image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            position: relative;
+            z-index: 0;
+            overflow-x: hidden;
         }
+
+        /* Superposition sombre */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        /* Effet de fade-in sur le body */
+        * {
+            transition: all 0.3s ease-in-out;
+        }
+
         header {
-            background-color: #1e3c72;
+            background-color: rgba(30, 60, 114, 0.8);
             color: white;
             padding: 20px;
             text-align: center;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
         }
+
         header img.logo {
             height: 60px;
         }
+
         nav a {
             color: white;
-            margin: 0 10px;
+            margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
+            font-size: 18px;
+            position: relative;
         }
+
         nav a:hover {
             text-decoration: underline;
+            color: #1e3c72;
         }
+
         section {
-            padding: 20px;
+            padding: 30px 20px;
             max-width: 900px;
-            margin: auto;
+            margin: 40px auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            animation: fadeIn 1s forwards;
         }
+
+        /* Animation fade-in */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         #gallery img {
             width: 45%;
             margin: 2%;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
         }
+
+        #gallery img:hover {
+            transform: scale(1.05);
+        }
+
         footer {
             text-align: center;
-            background-color: #1e3c72;
+            background-color: rgba(30, 60, 114, 0.8);
             color: white;
             padding: 15px;
             position: relative;
             bottom: 0;
             width: 100%;
+            margin-top: 30px;
+        }
+
+        /* Bouton principal */
+        a.cta-button {
+            display: inline-block;
+            background: #1e3c72;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        a.cta-button:hover {
+            background-color: #163c62;
+            transform: translateY(-5px);
+        }
+
+        /* Bouton WhatsApp fixe */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            font-size: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 999;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            #gallery img {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .cta-button {
+                width: 100%;
+                padding: 15px;
+                margin-top: 20px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="images/logo_valoris_generated.png" alt="Logo Valoris Business" class="logo">
+        <img src="images/logo_valoris_generated.png" alt="Logo de l'entreprise Valoris Business" class="logo">
         <h1>Valoris Business</h1>
         <nav>
             <a href="#accueil">Accueil</a>
@@ -65,26 +185,37 @@
             <a href="#contact">Contact</a>
         </nav>
     </header>
+
     <section id="accueil">
         <h2>Bienvenue chez Valoris Business</h2>
         <p>De la LED à l’assurance, un service brillant et rassurant. Votre centre de contact pour un télémarketing gagnant !</p>
+        <a href="#contact" class="cta-button">Contactez-nous</a>
     </section>
+
     <section id="services">
         <h2>Nos Services</h2>
         <p>Nous offrons un service de qualité en prise de rendez-vous et télévente. Notre centre de contact garantit professionnalisme, efficacité et résultats. Avec Valoris Business, vos campagnes bénéficient d'un accompagnement personnalisé pour maximiser votre succès commercial.</p>
     </section>
+
     <section id="gallery">
         <h2>Nos Produits</h2>
-        <img src="images/led1.jpg" alt="Éclairage LED">
-        <img src="images/assurance1.jpg" alt="Assurance contrat">
+        <img src="images/led1.jpg" alt="Produit d'éclairage LED">
+        <img src="images/assurance1.jpg" alt="Contrat d'assurance">
     </section>
+
     <section id="contact">
         <h2>Contact</h2>
-        <p>Email : <a href="mailto:valoris.vb@gmail.com">valoris.vb@gmail.com</a></p>
-        <p><a href="https://wa.me/212635419426">Contactez-nous sur WhatsApp</a></p>
+        <p>Email : <a href="mailto:valoris.vb@gmail.com" style="color: #fff;">valoris.vb@gmail.com</a></p>
+        <p><a href="https://wa.me/212635419426" style="color: #fff;" aria-label="Discuter sur WhatsApp avec Valoris Business">Contactez-nous sur WhatsApp</a></p>
     </section>
+
     <footer>
         <p>&copy; 2025 Valoris Business - Tous droits réservés.</p>
     </footer>
+
+    <!-- Bouton WhatsApp visible -->
+    <a href="https://wa.me/212635419426" class="whatsapp-btn" aria-label="Contacter Valoris Business sur WhatsApp">
+        <img src="images/whatsapp-icon.png" alt="WhatsApp">
+    </a>
 </body>
 </html>
