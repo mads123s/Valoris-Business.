@@ -11,7 +11,7 @@
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background-image: url('images/background.jpg'); /* Remplacez avec votre image */
+            background-image: url('https://images.unsplash.com/photo-1581091870627-9b5315067888'); /* Image générique d'un bureau moderne */
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -19,6 +19,7 @@
             position: relative;
             z-index: 0;
             overflow-x: hidden;
+            filter: brightness(60%); /* L'image devient un peu plus sombre pour améliorer la lisibilité */
         }
 
         /* Superposition sombre */
@@ -26,7 +27,7 @@
             content: "";
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.5); /* Superposition noire */
             z-index: -1;
         }
 
@@ -71,7 +72,7 @@
             padding: 30px 20px;
             max-width: 900px;
             margin: 40px auto;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.8); /* Légère transparence */
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             opacity: 0;
@@ -140,82 +141,3 @@
             background-color: #25D366;
             color: white;
             padding: 15px 25px;
-            border-radius: 50%;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            font-size: 28px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            z-index: 999;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .whatsapp-btn:hover {
-            transform: scale(1.1);
-        }
-
-        /* Responsive design */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            #gallery img {
-                width: 100%;
-                margin: 10px 0;
-            }
-
-            .cta-button {
-                width: 100%;
-                padding: 15px;
-                margin-top: 20px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <img src="images/logo_valoris_generated.png" alt="Logo de l'entreprise Valoris Business" class="logo">
-        <h1>Valoris Business</h1>
-        <nav>
-            <a href="#accueil">Accueil</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <section id="accueil">
-        <h2>Bienvenue chez Valoris Business</h2>
-        <p>De la LED à l’assurance, un service brillant et rassurant. Votre centre de contact pour un télémarketing gagnant !</p>
-        <a href="#contact" class="cta-button">Contactez-nous</a>
-    </section>
-
-    <section id="services">
-        <h2>Nos Services</h2>
-        <p>Nous offrons un service de qualité en prise de rendez-vous et télévente. Notre centre de contact garantit professionnalisme, efficacité et résultats. Avec Valoris Business, vos campagnes bénéficient d'un accompagnement personnalisé pour maximiser votre succès commercial.</p>
-    </section>
-
-    <section id="gallery">
-        <h2>Nos Produits</h2>
-        <img src="images/led1.jpg" alt="Produit d'éclairage LED">
-        <img src="images/assurance1.jpg" alt="Contrat d'assurance">
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email : <a href="mailto:valoris.vb@gmail.com" style="color: #fff;">valoris.vb@gmail.com</a></p>
-        <p><a href="https://wa.me/212635419426" style="color: #fff;" aria-label="Discuter sur WhatsApp avec Valoris Business">Contactez-nous sur WhatsApp</a></p>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Valoris Business - Tous droits réservés.</p>
-    </footer>
-
-    <!-- Bouton WhatsApp visible -->
-    <a href="https://wa.me/212635419426" class="whatsapp-btn" aria-label="Contacter Valoris Business sur WhatsApp">
-        <img src="images/whatsapp-icon.png" alt="WhatsApp">
-    </a>
-</body>
-</html>
